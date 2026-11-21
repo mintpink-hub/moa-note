@@ -47,7 +47,8 @@ let calView=new Date(),calSelected=today();const moaStickers=[
 {id:'24_home',label:'집콕'}
 ];
 const moaStickerMap=Object.fromEntries(moaStickers.map(x=>[x.id,x]));
-const moaStickerSrc=id=>'stickers/'+encodeURIComponent(id)+'.png';
+const moaStickerFiles={"04_walk":"04_dog_walk","09_work":"09_laptop","11_restaurant":"11_meal","13_nails":"13_nail","17_nap":"18_nap","18_relax":"17_rest","19_groceries":"19_grocery","23_gaming":"23_game"};
+const moaStickerSrc=id=>'stickers/'+encodeURIComponent(moaStickerFiles[id]||id)+'.png';
 
 const calKey=(y,m,d)=>`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
 function calRender(){
