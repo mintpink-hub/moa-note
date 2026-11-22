@@ -60,7 +60,7 @@ function calRender(){
   const key=calKey(y,m,d),entry=calendar[key]||{},b=document.createElement('button');b.className='cal-cell'+(key===calSelected?' selected':'');
   const num=document.createElement('span');num.textContent=d;b.append(num);
   if(moaStickerMap[entry.sticker]){const im=document.createElement('img');im.className='sticker-img';im.src=moaStickerSrc(entry.sticker);im.alt=moaStickerMap[entry.sticker].label;b.append(im)}
-  if(entry.text?.trim()){const t=document.createElement('span');t.className='cal-event-label';t.textContent=entry.text.trim().split('\n').filter(Boolean).slice(0,2).join(' · ');b.append(t)}
+  if(entry.text?.trim()){const t=document.createElement('span');t.className='cal-event-label';t.textContent=entry.text.split('\n').map(line=>line.trim()).find(Boolean)||'';b.append(t)}
   b.onclick=()=>{calSelected=key;calRender()};$('calGrid').append(b);
  }
  $('calSelected').textContent=calSelected+' ♡';$('calText').value=calendar[calSelected]?.text||'';
