@@ -1,0 +1,1 @@
+Replace index.html in the existing Moa Note deployment and copy the two PNGs and MP3 alongside it. Keep existing cloud-config.js, moa-note-cloud.js and stickers/ unchanged. Back up first. Music and character distribution permissions should be checked before public deployment. This package is not a complete standalone deployment.
